@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/aws-cloud9-3122640003-187856fe11d1486db4c3e721fe7f5ad1/express-app
+hooks:
+  BeforeInstall:
+    - location: scripts/before_install.sh
+      timeout: 300
+      runas: aws-cloud9-3122640003-187856fe11d1486db4c3e721fe7f5ad1
+  ApplicationStart:
+    - location: scripts/application_start.sh
+      timeout: 300
+      runas: aws-cloud9-3122640003-187856fe11d1486db4c3e721fe7f5ad1
+  ApplicationStop:
+    - location: scripts/application_stop.sh
+      timeout: 300
+      runas: aws-cloud9-3122640003-187856fe11d1486db4c3e721fe7f5ad1 
