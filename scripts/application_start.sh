@@ -1,9 +1,9 @@
 #!/bin/bash
 
-DIR="$HOME/express-app"
+DIR="~/express-app"
 cd $DIR
 
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
