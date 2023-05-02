@@ -7,6 +7,14 @@ const {
 } = require("./handler");
 
 const routes = [
+  // /
+  {
+    method: "GET",
+    path: "/",
+    handler: (request, h) => {
+      return "Hello World!, oh yeaahhh woho... berhasil. lelah ya... mangat...gege";
+    },
+  },
   // create date (POST)
   {
     method: "POST",

@@ -7,13 +7,15 @@ const init = async () => {
     host: "0.0.0.0",
   });
 
-  server.route({
-    method: "GET",
-    path: "/",
-    handler: (request, h) => {
-      return "Hello World!, oh yeaahhh woho... berhasil. lelah ya... mangat...gege";
-    },
-  });
+  // server.route({
+  //   method: "GET",
+  //   path: "/",
+  //   handler: (request, h) => {
+  //     return "Hello World!, oh yeaahhh woho... berhasil. lelah ya... mangat...gege";
+  //   },
+  // });
+
+  server.route(routes.routes);
 
   await server.start();
   console.log("Server running on %s", server.info.uri);
