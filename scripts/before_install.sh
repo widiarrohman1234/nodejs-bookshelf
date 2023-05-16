@@ -1,4 +1,7 @@
 #!/bin/bash
+sudo yum -y update
+sudo yum -y install ruby
+sudo yum -y install wget
 
 # install nvm dan node
 echo "CEK NVM"
