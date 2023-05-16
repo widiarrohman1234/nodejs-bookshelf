@@ -2,6 +2,11 @@
 sudo yum -y update
 sudo yum -y install ruby
 sudo yum -y install wget
+mkdir "/home/ec2-user/environment/express-app"
+cd /home/ec2-user/environment/express-app
+wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
+sudo chmod +x ./install
+sudo ./install auto
 
 # install nvm dan node
 echo "CEK NVM"
