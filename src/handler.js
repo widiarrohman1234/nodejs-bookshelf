@@ -2,7 +2,7 @@ const { nanoid } = require("nanoid");
 const books = require("./books");
 
 const addBookHandler = (request, h) => {
-  console.log(`add`)
+  console.log(`add`);
   const { judul, penerbit, jumlah_halaman } = request.payload;
   const id = nanoid(16);
   const createdAt = new Date().toISOString();
@@ -23,6 +23,9 @@ const addBookHandler = (request, h) => {
       status: "success",
       message: "Buku berhasil ditambah",
       data: {
+        judul: judul,
+        penerbit: penerbit,
+        jumlah_halaman: jumlah_halaman,
         nodeId: id,
       },
     });
@@ -47,7 +50,7 @@ const getAllBooksHandler = (request, h) => ({
 
 // show detail
 const getBookByIdHandler = (request, h) => {
-  console.log(`get id`)
+  console.log(`get id`);
   const { id } = request.params;
   const book = books.books.filter((n) => n.id === id)[0];
   if (book !== undefined) {
@@ -68,7 +71,7 @@ const getBookByIdHandler = (request, h) => {
 
 //edit book
 const editBookByIdHandler = (request, h) => {
-  console.log(`edit`)
+  console.log(`edit`);
   const { id, createAt } = request.params;
   const { judul, penerbit, jumlah_halaman } = request.payload;
   const updatedAt = new Date().toISOString();
@@ -101,7 +104,7 @@ const editBookByIdHandler = (request, h) => {
 
 //delete book
 const deleteBookByIdHandler = (request, h) => {
-  console.log(`hapus`)
+  console.log(`hapus`);
   const { id } = request.params;
   const index = books.books.findIndex((book) => book.id === id);
   console.log(books.books.findIndex((book) => book.id === id));
