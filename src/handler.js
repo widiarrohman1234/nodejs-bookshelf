@@ -8,6 +8,7 @@ const connection = mysql.createConnection({
   password: '@U[HlWe9wdf2vACY',
   database: 'books_shelf',
   port: 3306,
+  insecureAuth: true, 
 });
 
 connection.connect((err) => {
