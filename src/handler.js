@@ -1,5 +1,49 @@
 const { nanoid } = require("nanoid");
 const books = require("./books");
+const mysql = require("mysql");
+
+const connection = mysql.createConnection({
+  host: 'dbmysql-1.ci3eixhfokad.ap-southeast-1.rds.amazonaws.com',
+  user: 'root',
+  password: 'G!m5*hb8Hj4$',
+  database: 'your-database-name',
+  port: 3306,
+});
+
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to MySQL database:', err);
+    return;
+  }
+  console.log('Connected to MySQL database');
+});
+
+// get all---------------
+const getAllBooksHandler = (request, h) => {
+  connection.query('SELECT * FROM books', (error, results) => {
+    if (error) {
+      console.error('Error executing MySQL query:', error);
+      const response = h.response({
+        status: 'fail',
+        message: 'Failed to fetch books',
+      });
+      response.code(500);
+      return response;
+    }
+
+    const response = h.response({
+      status: 'success',
+      data: {
+        books: results,
+      },
+    });
+    response.code(200);
+    return response;
+  });
+};
+
+
+// --------------------
 
 const addBookHandler = (request, h) => {
   console.log(`add`);
@@ -12,7 +56,7 @@ const addBookHandler = (request, h) => {
     judul,
     penerbit,
     jumlah_halaman,
-    id,
+    // id,
     createdAt,
     udpatedAt,
   };
@@ -41,12 +85,12 @@ const addBookHandler = (request, h) => {
   return response;
 };
 
-const getAllBooksHandler = (request, h) => ({
-  status: "success get all books",
-  data: {
-    books,
-  },
-});
+// const getAllBooksHandler = (request, h) => ({
+//   status: "success get all books",
+//   data: {
+//     books,
+//   },
+// });
 
 // show detail
 const getBookByIdHandler = (request, h) => {
