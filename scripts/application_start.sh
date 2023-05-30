@@ -10,5 +10,3 @@ export NVM_DIR="$HOME/.nvm"
 npm install
 
 node ./src/server.js > app.out.log 2> app.err.log < /dev/null &
-
-npm start
