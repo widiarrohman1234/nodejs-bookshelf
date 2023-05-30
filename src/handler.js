@@ -4,9 +4,9 @@ const mysql = require("mysql");
 
 const connection = mysql.createConnection({
   host: 'dbmysql-1.ci3eixhfokad.ap-southeast-1.rds.amazonaws.com',
-  user: 'root',
-  password: 'G!m5*hb8Hj4$',
-  database: 'your-database-name',
+  user: 'books_shelf',
+  password: '@U[HlWe9wdf2vACY',
+  database: 'books_shelf',
   port: 3306,
 });
 
