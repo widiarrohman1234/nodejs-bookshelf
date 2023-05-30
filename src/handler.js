@@ -57,7 +57,7 @@ const addBookHandler = (request, h) => {
     judul,
     penerbit,
     jumlah_halaman,
-    // id,
+    id,
     createdAt,
     udpatedAt,
   };
