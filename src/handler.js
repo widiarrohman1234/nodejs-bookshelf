@@ -41,12 +41,12 @@ const addBookHandler = (request, h) => {
   return response;
 };
 
-// const getAllBooksHandler = (request, h) => ({
-//   status: "success get all books",
-//   data: {
-//     books,
-//   },
-// });
+const getAllBooksHandler = (request, h) => ({
+  status: "success get all books",
+  data: {
+    books,
+  },
+});
 
 // show detail
 const getBookByIdHandler = (request, h) => {

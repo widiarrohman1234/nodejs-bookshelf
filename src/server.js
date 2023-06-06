@@ -10,13 +10,13 @@ const init = async () => {
     },
   });
 
-  // server.route({
-  //   method: "GET",
-  //   path: "/",
-  //   handler: (request, h) => {
-  //     return "Hello World!, oh yeaahhh woho... berhasil. lelah ya... mangat...";
-  //   },
-  // });
+  server.route({
+    method: "GET",
+    path: "/",
+    handler: (request, h) => {
+      return "Hello World!, oh yeaahhh woho... berhasil. lelah ya... mangat... p";
+    },
+  });
 
   server.route(routes.routes);
 
